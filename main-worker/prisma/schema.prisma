@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client"
+  runtime  = "workerd"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model Organization {
+  id             Int        @id @default(autoincrement())
+  orgName        String     @unique
+  orgDescription String
+  Users          User[]
+  Positions      Position[]
+}
+
+model Position {
+  id     Int    @id @default(autoincrement())
+  pname  String @unique
+  rights String
+
+  orgId        Int
+  organization Organization @relation(fields: [orgId], references: [id])
+
+  users User[]
+}
+
+enum Role {
+  Owner
+  Admin
+  Employee
+}
+
+model User {
+  id          String @id @default(cuid())
+  name        String
+  email       String @unique
+  phoneNumber String
+  role        Role
+
+  orgId        Int
+  organization Organization @relation(fields: [orgId], references: [id])
+
+  positionId Int
+  position   Position @relation(fields: [positionId], references: [id])
+}
