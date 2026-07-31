@@ -1,5 +1,5 @@
 import { PrismaClient, Role } from "../../generated/prisma/client";
-import { OrgType, PartialOrg } from "../schema.ts/org.schema";
+import { OrgType, PartialOrg } from "../org/org.schema";
 
 export async function createOrg(prisma: PrismaClient, data: { orgDetails: OrgType, ownerCred: any }) {
 	try {

@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { createOrg, getOrgDetails, updateOrg } from "../services/org.service";
+import { createOrg, getOrgDetails, updateOrg } from "./org.service";
 
 export async function handleCreateOrg(c: Context) {
 	try {

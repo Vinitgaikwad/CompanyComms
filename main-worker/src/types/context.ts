@@ -1,5 +1,5 @@
 // src/types/context.ts
-import { PrismaClient } from "../generated/prisma/client";
+import { PrismaClient, Role } from "../generated/prisma/client";
 
 export type Bindings = {
 	DATABASE_URL: string;
@@ -18,9 +18,12 @@ export type AppContext = {
 	Variables: {
 		prisma: PrismaClient;
 		data: any;
-		userLoginDetail: {
-			email: string,
-
+		auth: string;
+		decoded: {
+			userid: string,
+			role: Role,
+			orgId: number,
+			positionId: number
 		}
 	};
 };

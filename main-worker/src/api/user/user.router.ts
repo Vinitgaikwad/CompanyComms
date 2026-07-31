@@ -1,6 +1,6 @@
 import { Hono } from "hono";
-import { handleUserSignUp } from "../controllers/user.controller";
-import { signInZod, signUpZod } from "../schema.ts/user.schema";
+import { handleUserSignUp } from "./user.controller";
+import { signInZod, signUpZod } from "./user.schema";
 import { validateBody } from "../../global/middlewares/validate";
 
 const userRouter = new Hono()

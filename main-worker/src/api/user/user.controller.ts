@@ -1,5 +1,5 @@
 import { Context } from "hono";
-import { signIn, signUp } from "../services/user.service";
+import { signIn, signUp } from "./user.service";
 
 export async function handleUserSignUp(c: Context) {
 	try {

@@ -1,9 +1,8 @@
 import { PrismaClient } from "../../generated/prisma/client";
-import { SignInputs, SignUpInputs } from "../schema.ts/user.schema";
+import { SignInputs, SignUpInputs } from "./user.schema";
 import { AppError } from "../../global/middlewares/errorHandler";
 import { Jwt } from "hono/utils/jwt";
 import bycrypt from "bcryptjs"
-
 
 export async function signUp(prisma: PrismaClient, details: SignUpInputs) {
 	try {
