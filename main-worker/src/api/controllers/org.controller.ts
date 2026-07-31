@@ -33,7 +33,7 @@ export async function handleGetOrgDetails(c: Context) {
 		const prisma = c.get('prisma')
 		const getOrg = await getOrgDetails(prisma, data);
 		return c.json({
-			data
+			getOrg
 		});
 	} catch (error) {
 		throw error

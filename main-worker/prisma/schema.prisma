@@ -34,11 +34,14 @@ enum Role {
 }
 
 model User {
-  id          String @id @default(cuid())
-  name        String
-  email       String @unique
-  phoneNumber String
-  role        Role
+  id            String  @id @default(cuid())
+  name          String
+  email         String  @unique
+  hashpassword  String
+  phoneNumber   String
+  role          Role
+  verifiedEmail Boolean @default(false)
+  verifiedEmp   Boolean @default(false)
 
   orgId        Int
   organization Organization @relation(fields: [orgId], references: [id])

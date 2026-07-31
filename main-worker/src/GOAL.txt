@@ -1,0 +1,6 @@
+todays :
+- Full AuthAuthentatication (add emailVarification Later for now take email -> bycrypt password)
+- CRUD Users
+- Verify with db and docker
+- Auth + workspace creation/invites
+- Docs CRUD + folder tree (no versioning yet)

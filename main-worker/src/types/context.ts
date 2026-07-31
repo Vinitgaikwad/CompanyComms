@@ -11,9 +11,16 @@ export type Variables = {
 
 // src/types/context.ts
 export type AppContext = {
-	Bindings: { DATABASE_URL: string };
+	Bindings: {
+		DATABASE_URL: string,
+		SECRET: string
+	};
 	Variables: {
 		prisma: PrismaClient;
-		data: any; // set by validate() middleware, narrowed via casting in controller
+		data: any;
+		userLoginDetail: {
+			email: string,
+
+		}
 	};
 };

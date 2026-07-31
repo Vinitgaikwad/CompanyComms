@@ -7,7 +7,7 @@ import { id, orgSchema, updateOrgParam } from "../schema.ts/org.schema";
 const orgRouter = new Hono()
 
 orgRouter.put('/create-org', validateBody(orgSchema), handleCreateOrg);
-orgRouter.put('/update-org', validateBody(updateOrgParam), handleUpdateOrg)
+orgRouter.put('/update-org', validateBody(updateOrgParam), handleUpdateOrg) // verify auth before
 orgRouter.put('/get-org', validateBody(id), handleUpdateOrg)
 
 export { orgRouter }
